@@ -1,7 +1,7 @@
-const { error } = require('console');
-const http = require('http');
-const { parse } = require('querystring');
-const fs = require('fs/promises');
+import { error } from 'console';
+import http from 'http';
+import { parse } from 'querystring';
+import fs from 'fs/promises';
 
 const port = 3001;
 
