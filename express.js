@@ -9,7 +9,8 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   next();
 });
-
+app.use(express.urlencoded({ extended: false }));
+app.use(productsRoutes);
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello, World!' });
 });
@@ -19,9 +20,6 @@ app.post('/', (req, res) => {
   console.log(body);
   res.status(201).json({ message: 'Hello, World!' });
 });
-
-app.use(express.urlencoded({ extended: false }));
-app.use(productsRoutes);
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
